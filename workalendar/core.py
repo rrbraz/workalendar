@@ -8,7 +8,6 @@ from calendar import monthrange
 from datetime import date, timedelta, datetime
 from math import pi
 
-import ephem
 import pytz
 from calverter import Calverter
 from dateutil import easter
@@ -551,6 +550,8 @@ class ChineseNewYearCalendar(LunarCalendar):
 
 
 class EphemMixin(LunarCalendar):
+    import ephem
+
     def calculate_equinoxes(self, year, timezone='UTC'):
         """ calculate equinox with time zone """
 
