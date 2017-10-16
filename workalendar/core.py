@@ -550,9 +550,9 @@ class ChineseNewYearCalendar(LunarCalendar):
 
 
 class EphemMixin(LunarCalendar):
-    import ephem
 
     def calculate_equinoxes(self, year, timezone='UTC'):
+        import ephem
         """ calculate equinox with time zone """
 
         tz = pytz.timezone(timezone)
@@ -568,6 +568,7 @@ class EphemMixin(LunarCalendar):
         return (equinox1.date(), equinox2.date())
 
     def solar_term(self, year, degrees, timezone='UTC'):
+        import ephem
         """
         Returns the date of the solar term for the given longitude
         and the given year.
